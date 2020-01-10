@@ -1,0 +1,6 @@
+name: toro-foods
+recipe: pantheon
+config:
+  framework: wordpress
+  site: toro-foods
+  id: 04445d44-147a-44e0-a75d-413b5301402e
