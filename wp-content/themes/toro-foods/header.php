@@ -1,58 +1,38 @@
 <?php
+
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Toro_Foods
+ * Page Header
  */
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+<!DOCTYPE html>
 
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="title" content="<?php wp_title('|', true, 'right'); ?>">
+	<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0,viewport-fit=cover" />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'toro-foods' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+<body class="body">
+	<div class="site">
+		<!-- Closes in footer.php -->
+		<header class="site-header">
+			<div class="header__wrapper">
+				<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home">Logo Here</a>
 				<?php
-			else :
+					if (has_nav_menu('header')) :
+						wp_nav_menu(array(
+							'container'       => 'nav',
+							'theme_location'  => 'header',
+							'container_id'    => 'header__nav',
+							'container_class' => 'header__nav',
+							'menu_id'         => 'header__nav__list',
+							'menu_class'      => 'header__nav__list',
+						));
+					endif;
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$toro_foods_description = get_bloginfo( 'description', 'display' );
-			if ( $toro_foods_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $toro_foods_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'toro-foods' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+			</div>
+		</header>
