@@ -1,0 +1,117 @@
+// BRAND COLORS
+$brand-salmon: #EF5537;
+$brand-teal: #30967A;
+$brand-goldenrod: #E09F38;
+$brand-daffodil: #FFCF56;
+$brand-wheat: #FFDF91;
+
+// COLORS
+$red:            #aa1100;
+$orange:         #fca356;
+$yellow:         #fbe774;
+$lime--light:    #bce37d;
+$lime:           #99c552;
+$aquamarine:     #50e3c2;
+$teal--realdark: #007395;
+$teal--dark:     #219fb4;
+$teal:           #24c3da;
+$teal--light:    #b7dee2;
+$purple:         #9e7eb5;
+$lightblack:     #002836;
+$black:          #000;
+$white:          #fff;
+
+$gray-1: #555555;
+$gray-2:  #f9f9f9;
+$gray-5:  #eaebed;
+$gray-10: #a3bac4;
+$gray-15: lighten($black, 85%);
+$gray-20: #d8d8d8;
+$gray-25: #afb1b4;
+$gray-30: lighten($black, 70%);
+$gray-35: lighten($black, 65%);
+$gray-40: lighten($black, 60%);
+$gray-45: #999999;
+$gray-50: lighten($black, 50%);
+$gray-55: #757575;
+$gray-60: #546b75;
+$gray-65: #545859;
+$gray-70: lighten($black, 30%);
+$gray-75: #4a4a4a;
+$gray-80: #373a36;
+$gray-85: lighten($black, 15%);
+$gray-90: lighten($black, 10%);
+$gray-95: lighten($black, 5%);
+
+// ALPHA COLORS
+$black_0a:    rgba($black, 0);
+$black_10a:   rgba($black, .1);
+$black_15a:   rgba($black, .15);
+$black_25a:   rgba($black, .25);
+$black_50a:   rgba($black, .5);
+$black_55a:   rgba($black, .55);
+$white_50a:   rgba($white, .5);
+$white_75a:   rgba($white, .75);
+$white_85a:   rgba($white, .85);
+$white_90a:   rgba($white, .9);
+$gray-10_10a: rgba($gray-10, .1);
+$gray-55_15a: rgba($gray-55, .15);
+$gray-80_85a: rgba($gray-80, .85);
+$gray-2_90a: rgba($gray-2, .9);
+
+
+//TRANSITIONS
+$global-transition-time: 300ms;
+$transition-background-color: background-color $global-transition-time ease;
+$transition-border-color: border-color $global-transition-time ease;
+$transition-color: color $global-transition-time ease;
+$transition-fill: fill $global-transition-time ease;
+$transition-opacity: opacity $global-transition-time ease;
+$transition-transform: transform $global-transition-time ease;
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 22px !default;
+
+$max-width: 1600px;
+
+$column-gutter: 30px;
+
+// columns in the grid
+$total-columns: 12;
+
+//Breakpoints
+$baby-lap-break: 421px;
+$lap-break: 769px;
+$desk-break: 1025px;
+$big-desk-break: 1200px;
+$baby-wall-break: 1440px; // this is the designed width
+$wall-break: $max-width;
+
+$screen: 'only screen';
+
+$landscape: '#{$screen} and (orientation: landscape)';
+$portrait: '#{$screen} and (orientation: portrait)';
+
+$hand-up: $screen;
+$hand-only: '#{$screen} and (max-width: #{$lap-break})';
+
+$baby-lap-up: '#{$screen} and (min-width:#{$baby-lap-break})';
+$baby-lap-only: '#{$screen} and (min-width:#{$baby-lap-break}) and (max-width:#{$lap-break})';
+$hand-baby-lap-only: '#{$screen} and (max-width:#{$lap-break})';
+
+$lap-up: '#{$screen} and (min-width:#{$lap-break})';
+$lap-only: '#{$screen} and (min-width:#{$lap-break}) and (max-width:#{$desk-break})';
+$hand-lap-only: '#{$screen} and (max-width:#{$desk-break})';
+
+$under-desk: '#{$screen} and (max-width:#{$desk-break})';
+$desk-up: '#{$screen} and (min-width:#{$desk-break})';
+$desk-only: '#{$screen} and (min-width:#{$desk-break}) and (max-width:#{$big-desk-break})';
+
+$under-big-desk: '#{$screen} and (max-width:#{$big-desk-break})';
+$big-desk-up: '#{$screen} and (min-width:#{$big-desk-break})';
+$big-desk-only: '#{$screen} and (min-width:#{$big-desk-break}) and (max-width:#{$wall-break})';
+
+$baby-wall-up: '#{$screen} and (min-width:#{$baby-wall-break})';
+$baby-wall-only: '#{$screen} and (min-width:#{$baby-wall-break}) and (max-width:#{$wall-break})';
+
+$wall-up: '#{$screen} and (min-width:#{$wall-break})';

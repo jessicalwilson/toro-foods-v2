@@ -119,18 +119,15 @@ add_action( 'widgets_init', 'toro_foods_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function toro_foods_scripts() {
-	wp_enqueue_style( 'toro-foods-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'toro-foods-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'toro-foods-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+function custom_wp_enqueue_scripts() {
+	wp_enqueue_style('typekit', 'https://use.typekit.net/ttx1qvt.css');
+	// wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+	// wp_enqueue_style('animate-on-scroll', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
+	wp_enqueue_style('app', get_theme_file_uri('/dist/app.css'));
+	// wp_enqueue_script('animate-on-scroll', 'https://unpkg.com/aos@2.3.1/dist/aos.js', ['jquery'], false, true);
+	wp_enqueue_script('app', get_theme_file_uri('/dist/app.js'), ['jquery'], false, true);
 }
-add_action( 'wp_enqueue_scripts', 'toro_foods_scripts' );
+add_action('wp_enqueue_scripts', 'custom_wp_enqueue_scripts');
 
 /**
  * Implement the Custom Header feature.

@@ -1,0 +1,29 @@
+$body-font-family: 'source-sans-pro', sans-serif;
+$body-font-size: 1rem;
+$body-line-height: 1.4em;
+$body-font-weight: 300 !default;
+
+$heading-font-family: 'acier-bat-solid', sans-serif;
+$heading-font-weight: 400 !default;
+
+$accent-font-family: 'source-sans-pro', sans-serif;
+$accent-font-weight: 700 !default;
+
+html,
+body {
+	color: #0e1111;
+	font-family: $body-font-family;
+	line-height: $body-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #0e1111;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	margin-top: 0;
+}

@@ -4,3 +4,36 @@ config:
   framework: wordpress
   site: toro-foods
   id: 04445d44-147a-44e0-a75d-413b5301402e
+colab:
+  lando: 3.0.0-rc-12
+  recipe: pantheon
+  framework: wordpress
+  version: 1.0.3
+proxy:
+  node:
+    - sync-toro-foods.lndo.site:3000
+services:
+  node:
+    type: node:custom
+    ssl: true
+    overrides:
+      ports:
+        - "3000"
+      image: colab/buildtools:node-10
+tooling:
+  npm:
+    service: node
+    description: 'Runs npm commands'
+    cmd: npm
+  watch:
+    service: node
+    description: 'Runs watch'
+    cmd: cd $LANDO_MOUNT/wp-content/themes/toro-foods/ && npm install && npm run watch
+  prod:
+    service: node
+    description: 'Runs prod'
+    cmd: cd $LANDO_MOUNT/wp-content/themes/toro-foods/ && npm install && npm run prod
+  yarn:
+    service: node
+    description: 'Runs yarn commands'
+    cmd: yarn
