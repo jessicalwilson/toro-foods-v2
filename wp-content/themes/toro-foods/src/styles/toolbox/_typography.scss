@@ -1,13 +1,14 @@
 $body-font-family: 'source-sans-pro', sans-serif;
 $body-font-size: 1rem;
 $body-line-height: 1.4em;
-$body-font-weight: 300 !default;
+$body-font-weight: 400 !default;
 
-$heading-font-family: 'acier-bat-solid', sans-serif;
+$heading-font-family: 'playfair-display', serif;
 $heading-font-weight: 400 !default;
+$heading-extra-bold: 900 !default;
 
-$accent-font-family: 'source-sans-pro', sans-serif;
-$accent-font-weight: 700 !default;
+$accent-font-weight: 600 !default;
+$light-font-weight: 300, !default;
 
 html,
 body {

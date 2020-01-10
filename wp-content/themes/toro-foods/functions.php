@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'toro_foods_widgets_init' );
  * Enqueue scripts and styles.
  */
 function custom_wp_enqueue_scripts() {
-	wp_enqueue_style('typekit', 'https://use.typekit.net/ttx1qvt.css');
+	wp_enqueue_style('typekit', 'https://use.typekit.net/vgg7zcc.css');
 	// wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 	// wp_enqueue_style('animate-on-scroll', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
 	wp_enqueue_style('app', get_theme_file_uri('/dist/app.css'));
