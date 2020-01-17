@@ -6,6 +6,7 @@
 
 ?>
 <!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -21,18 +22,24 @@
 		<!-- Closes in footer.php -->
 		<header class="site-header">
 			<div class="header__wrapper">
-				<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home">Logo Here</a>
-				<?php
-					if (has_nav_menu('header')) :
-						wp_nav_menu(array(
-							'container'       => 'nav',
-							'theme_location'  => 'header',
-							'container_id'    => 'header__nav',
-							'container_class' => 'header__nav',
-							'menu_id'         => 'header__nav__list',
-							'menu_class'      => 'header__nav__list',
-						));
-					endif;
-				?>
+				<div class="logo">
+					<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home">Logo Here</a>
+				</div>
+				<div class="navigation">
+					<?php
+						if (has_nav_menu('header')) :
+							wp_nav_menu(array(
+								'container'       => 'nav',
+								'theme_location'  => 'header',
+								'container_id'    => 'header__nav',
+								'container_class' => 'header__nav',
+								'menu_id'         => 'header__nav__list',
+								'menu_class'      => 'header__nav__list',
+							));
+						endif;
+					?>
+					<a href="">Cart</a>
+					<a href="">Search</a>
+				</div>
 			</div>
 		</header>
