@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
+<?php $logo = get_field('logo', 'options'); ?>
+
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,9 +25,9 @@
 		<header class="site-header">
 			<div class="header__wrapper">
 				<div class="logo">
-					<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home">Logo Here</a>
+					<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="header__logo-image" src="<?php echo $logo; ?>"></a>
 				</div>
-				<div class="navigation">
+				<div class="navigation-menu">
 					<?php
 						if (has_nav_menu('header')) :
 							wp_nav_menu(array(
@@ -38,8 +40,8 @@
 							));
 						endif;
 					?>
-					<a href="">Cart</a>
-					<a href="">Search</a>
+					<a class="" href="">Cart</a>
+					<a class="" href="">Search</a>
 				</div>
 			</div>
 		</header>
