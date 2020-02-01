@@ -11,7 +11,7 @@
         <?php endif; ?>
         
         <?php if ($sub_heading) :?>
-        <p class="hero__subheading"><?php echo $sub_heading; ?></p>
+            <p class="hero__subheading"><?php echo $sub_heading; ?></p>
         <?php endif; ?>
         
         <div class="featured-recipe"></div>
