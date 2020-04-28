@@ -1,8 +1,11 @@
 <?php get_header(); ?>
 
-<?php $heading = get_field('heading'); ?>
-<?php $sub_heading = get_field('sub_heading'); ?>
-<?php $featured_recipe = get_field('featured_recipe'); ?>
+<?php
+$page_for_recipes = get_page_for_post_type('recipe');
+$heading = get_field('heading', $page_for_recipes);
+$sub_heading = get_field('sub_heading', $page_for_recipes);
+$featured_recipe = get_field('featured_recipe', $page_for_recipes);
+?>
 
 <main class="main">
     <div class="hero">
@@ -43,27 +46,13 @@
         </section>
     <?php endif; ?>
     
-    <section class="search-filters search-filters--recipe">
-        <div class="search__wrapper">
-          <a href=""><img class="icon icon--search" src=""></a>
-          <input class="input search__input search__input--recipes" type="text" id="search-recipes" name="search-recipes" placeholder="Search Recipes">
-        </div>
-        <div class="filter__wrapper">
-          <div class="filter__button">
-            <a class="filter__text" href="">Filter</a>
-            <a class="filter__icon" href=""><img src="img/icons/filter.svg"></a>
-          </div>
-          <ul class="filter__list">
-            <li><a class="filter__link" href="">Filter 1</a></li>
-            <li><a class="filter__link" href="">Filter 2</a></li>
-            <li><a class="filter__link" href="">Filter 3</a></li>
-          </ul>
-        </div>
-      </section>
+    <?php get_template_part('partials/search-filters-recipe'); ?>
       
         <div class="recipes-grid"></div>
-        <div class="instagram-callout"></div>
-        <div class="newsletter-sign-up"></div>
+        
+        <?php get_template_part('partials/instagram-callout'); ?>
+        
+        <?php get_template_part('partials/newsletter-sign-up'); ?>
 </main>
 
 <?php get_footer(); ?>
