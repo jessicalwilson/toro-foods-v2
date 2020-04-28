@@ -13,9 +13,6 @@
 <?php $phone_number = get_field('phone_number', 'options'); ?>
 <?php $contact_email = get_field('contact_email', 'options'); ?>
 
-
-
-
 <footer class="footer">
 	<div class="footer__top">
 		<div class="footer__logo-copy">
