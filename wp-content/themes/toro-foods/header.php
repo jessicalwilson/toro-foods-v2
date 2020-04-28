@@ -20,23 +20,23 @@
 </head>
 
 <body class="body">
-	<div class="site">
+	<div class="site-container">
 		<!-- Closes in footer.php -->
-		<header class="site-header">
+		<header class="header">
 			<div class="header__wrapper">
-				<div class="logo">
-					<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="header__logo-image" src="<?php echo $logo; ?>"></a>
+				<div class="header__logo">
+					<a class="header__logo-link" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="header__logo-image" src="<?php echo $logo; ?>"></a>
 				</div>
-				<div class="navigation-menu">
+				<div class="header__menu">
 					<?php
 						if (has_nav_menu('header')) :
 							wp_nav_menu(array(
 								'container'       => 'nav',
 								'theme_location'  => 'header',
-								'container_id'    => 'header__nav',
-								'container_class' => 'header__nav',
-								'menu_id'         => 'header__nav__list',
-								'menu_class'      => 'header__nav__list',
+								'container_id'    => 'menu-container',
+								'container_class' => 'menu-container',
+								'menu_id'         => 'menu-list',
+								'menu_class'      => 'menu-list',
 							));
 						endif;
 					?>

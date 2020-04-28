@@ -14,21 +14,22 @@ const mix = require('laravel-mix');
 mix
 	.js('src/scripts/app.js', 'dist/')
 	.sass('src/styles/app.scss', 'dist/')
+	.copyDirectory('src/images', 'dist/images')
 	.browserSync({
-		host: 'camdens.lndo.site',
+		host: 'toro-foods.lndo.site',
 		open: false,
 		// proxy: {
 		//     target: 'appserver_nginx'
 		// },
 		// proxy: 'appserver_nginx.camdens.internal',
-		proxy: 'camdens.lndo.site',
+		proxy: 'toro-foods.lndo.site',
 		socket: {
-			domain: 'sync-camdens.lndo.site',
+			domain: 'sync-toro-foods.lndo.site',
 			port: 80
 		},
 		ui: false
 	});
-
+	  
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.

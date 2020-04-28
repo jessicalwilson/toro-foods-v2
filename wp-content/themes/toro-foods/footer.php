@@ -31,8 +31,8 @@
 					'theme_location'  => 'footer',
 					'container_id'    => 'footer__nav',
 					'container_class' => 'footer__nav',
-					'menu_id'         => 'footer__nav__list',
-					'menu_class'      => 'footer__nav__list',
+					'menu_id'         => 'footer__nav-list',
+					'menu_class'      => 'footer__nav-list',
 				));
 			endif;
 			?>
@@ -41,9 +41,9 @@
 		<div class="footer__company-information">
 			<h1 class="footer__heading">Connect With Us</h1>
 			<p class="footer__address"><?php echo $address; ?></p>
-			<a class="footer__email" href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a>
 			<a class="footer__phone-number" href="tel:<?php echo preg_replace('/[^0-9]/s', '', $phone_number); // strip non-numeric characters; 
 									?>"><?php echo $phone_number; ?></a>
+			<a class="footer__email" href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a>
 			<div class="footer__social-media">
 				<a class="footer__instagram" href="<?php echo $instagram; ?>">Instagram</a>
 				<a class="footer__pinterest" href="<?php echo $pinterest; ?>">Pinterest</a>
@@ -57,14 +57,15 @@
 			
 			<?php $query = new WP_Query(array(
 				'posts_per_page' => 2,
+				'post_status' => 'publish',
 			)); ?>
 
 			<?php if ($query->have_posts()) : ?>
 
 				<?php while ($query->have_posts()) : $query->the_post(); ?>
 					<div>
-						<h2 class=""><?php echo the_title(); ?></h2>
-						<p class=""><?php echo the_excerpt(); ?></p>
+						<h2 class="blog__title"><?php the_title(); ?></h2>
+						<div class="blog__excerpt"><?php the_excerpt(); ?></div>
 					</div>
 
 				<?php endwhile; ?>
@@ -72,6 +73,7 @@
 			<?php else : ?>
 				<?php echo ('Sorry, no posts were found.'); ?>
 			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
 		</div>
 	</div>
 
@@ -84,8 +86,8 @@
 					'theme_location'  => 'footer-utility',
 					'container_id'    => 'footer-utility__nav',
 					'container_class' => 'footer-utility__nav',
-					'menu_id'         => 'footer-utility__nav__list',
-					'menu_class'      => 'footer-utility__nav__list',
+					'menu_id'         => 'footer-utility__nav-list',
+					'menu_class'      => 'footer-utility__nav-list',
 				));
 			endif;
 			?>
