@@ -14,6 +14,9 @@ const mix = require('laravel-mix');
 mix
 	.js('src/scripts/app.js', 'dist/scripts')
 	.sass('src/styles/app.scss', 'dist/styles')
+		.options({
+			processCssUrls: false
+		})
 	.copyDirectory('src/images', 'dist/images')
 	.browserSync({
 		host: 'toro-foods.lndo.site',

@@ -1,4 +1,7 @@
 <?php
+// Basic Setup
+include( get_template_directory() . '/functions/setup.php' );
+
 // Menus
 include( get_template_directory() . '/functions/menus.php' );
 
