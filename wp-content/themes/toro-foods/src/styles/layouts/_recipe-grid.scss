@@ -1,0 +1,42 @@
+.recipe-grid {
+    padding: 0 135px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recipe-single {
+    margin-top: 40px;
+    border: solid 2px #EEE;
+    border-radius: 6px;
+}
+
+@media only screen and (min-width: 768px) {
+    .recipe-single {
+        width: calc((100% - 40px) / 2);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .recipe-single {
+        width: calc((100% - 60px) / 3);
+    }
+}
+
+.recipe__copy {
+    font-size: 16px;
+    padding: 0 40px;
+    margin-bottom: 2em;
+}
+
+.recipe__title {
+    font-family: $heading-font-family;
+    font-size: 20px;
+    font-weight: $heading-extra-bold;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+.recipe__description {
+    max-width: 75%;
+}

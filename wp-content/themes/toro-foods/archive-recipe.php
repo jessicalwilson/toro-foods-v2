@@ -19,16 +19,16 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
             
           <div class="recipe__content">
             <div class="recipe__inner">
-              <h2 class="recipe__title">
+              <h2 class="recipe__heading">
                 <?php the_title($featured_post->ID); ?>
               </h2>
               <h3 class="recipe__subheading">
                 <?php echo $featured_recipe->subheading; ?>
               </h3>
               <img class="recipe__chili" src ="">
-              <p class="recipe__excerpt">
+              <div class="recipe__excerpt">
                 <?php the_excerpt($featured_post->ID); ?>
-              </p>
+              </div>
               <a class="button button--primary" href="<?php the_permalink($featured_post->ID); ?>">Read More</a>
             </div>
             
@@ -60,11 +60,15 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
           <div class="recipe-single__card">
             <div class="recipe__copy">
               <h4 class="recipe__title"><?php the_title(); ?></h4>
-              <p class="recipe__excerpt"><?php the_excerpt(); ?></p>
+              <div class="recipe__excerpt">
+                <?php the_excerpt(); ?>
+              </div>
               <img class="spice-rating" src="" />
             </div>
-          </a>
-          <img class="recipe__image" src="<?php the_post_thumbnail(); ?>">
+          </div>
+          <div class="recipe__image">
+            <?php the_post_thumbnail(); ?>
+          </div>
           <div class="recipe__social-media">
             <div class="recipe__likes">
               <a href=""><img class="icon icon--heart" src=""><?php echo $like_count ?></a>
@@ -78,9 +82,9 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
         <div class="recipe__load-more">
           <button class="button button--secondary">Load More Recipes</button>
         </div>
+        </div>
     <?php else : 
         _e( 'Sorry, no posts were found.', 'textdomain' ); ?>
-  </div>
     <?php endif; ?>
       
   <?php get_template_part('partials/instagram-callout'); ?>

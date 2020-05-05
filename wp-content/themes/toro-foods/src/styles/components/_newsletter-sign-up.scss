@@ -1,0 +1,27 @@
+.newsletter-sign-up {
+    display: flex;
+    align-items: center;
+    margin: 125px 0 111px 0;
+    padding: 0 120px;
+    
+    .gform_fields {
+        display: flex !important;
+        margin-top: 0;
+        
+        .gform_wrapper form {
+            display: flex !important;
+        }
+        
+        input {
+            width: 280px !important;
+            margin-top: 0 !important;
+            border: 1px solid #AEB5BB !important;
+            border-radius: 2px !important;
+        }
+        
+        input::placeholder {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+body {
+    color: rgba(39,59,73,100);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.site-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.input {
+    color: rgba(39, 59, 73, 100);
+    font-size: 18px;
+    border-radius: 2px;
+    border: 1px solid #AEB5BB;
+    padding-left: 2px;
+}
+
+input::placeholder {
+    color: #C9CED2;
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.button {
+    color: white;
+    display: block;
+    padding: 12px 50px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 18px;
+    background-color: #EA5550;
+    border-radius: 3px;
+    border: none;
+}
+
+.button--primary {
+    border-bottom: 2px solid #C72F4C;
+    border-right: 2px solid #C72F4C;
+}
+
+.button--primary:hover {
+    background-color: #C72F4C;
+}
+
+.button--secondary {
+    color:#EA5550;
+    background-color: unset;
+    padding: 0.5em 1em;
+    border: 1px solid #EA5550;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button--secondary:hover {
+    color: white;
+    background-color: #EA5550;
+}
+
+.icon:hover {
+    opacity: .75;
+}

@@ -1,6 +1,13 @@
 @import 'node_modules/normalize.scss/normalize';
 @import 'toolbox/variables';
 @import 'toolbox/typography';
-@import 'partials/header';
-@import 'partials/footer';
+@import 'toolbox/base';
 @import 'layouts/recipes-archive';
+@import 'layouts/recipe-grid';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/hero';
+@import 'components/featured-recipe';
+@import 'components/recipe-search';
+@import 'components/instagram-callout';
+@import 'components/newsletter-sign-up';

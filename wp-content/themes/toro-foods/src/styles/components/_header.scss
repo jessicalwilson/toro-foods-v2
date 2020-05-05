@@ -1,7 +1,7 @@
 .header__wrapper {
     display: flex;
     align-items: center;
-    padding: 20px 135px;
+    padding: 0px 110px;
     background-color: #FFFFFF;
     color: rgba(39,59,73,100);
     font-family: 'Playfair Display', serif;
@@ -18,7 +18,6 @@
     a {
         color: inherit;
         text-decoration: none;
-        padding: 1em;
         text-transform: uppercase;
     }
 }
@@ -29,6 +28,7 @@
     align-items: center;
         
     .menu-item {
+        padding: 15px 22px;
         
         &:hover {
             .sub-menu {
@@ -42,18 +42,22 @@
             ::after {
                 content: "";
                 position: absolute;
-                top: 8px;
-                right: 0;
+                top: 24px;
+                right: 8px;
                 width: 7px;
                 height: 5px;
-                background-image: url("../../images/down-triangle.svg");
+                background-image: url("../images/down-triangle.svg");
             }
         }
         
         &.current-menu-item {
-            color: $brand-red;
-            padding-top: 5px;
-            border-top: 3px solid $brand-red;
+            
+            a {
+                color: $brand-red;
+                padding-top: 5px;
+                border-top: 3px solid $brand-red;
+                padding-top: 24px;
+            }
         }
     }
     
@@ -66,5 +70,9 @@
         padding: 0;
         background-color: #FFFFFF;
         list-style: none;
+    }
+    
+    .sub-menu li {
+        padding: 10px 15px;
     }
 }
