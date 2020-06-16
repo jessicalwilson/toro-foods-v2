@@ -1,19 +1,34 @@
+.header {
+    position: relative;
+}
+
 .header__wrapper {
-    display: flex;
-    align-items: center;
-    padding: 0px 110px;
+    padding: 10px 9%;
     background-color: #FFFFFF;
     color: rgba(39,59,73,100);
     font-family: 'Playfair Display', serif;
     font-size: 16px;
     box-shadow: 0 -1px 0 0 #CED4DE, 0 2px 2px 0 #DAE0EA;
     z-index: 1;
+    
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        padding: 0 9%;
+    }
+}
+
+.header__logo-image {
+    flex-shrink: 0;
 }
 
 .header__menu {
-    display: flex;
-    align-items: center;
     margin-left: auto;
+    
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+    }
     
     a {
         color: inherit;
@@ -23,30 +38,41 @@
 }
 
 .menu-list {
-    display: flex;
     list-style: none;
-    align-items: center;
+    margin: 14.5px;
+    padding-inline-start: 0 !important;
         
     .menu-item {
-        padding: 15px 22px;
+        padding: 15px 18px;
         
         &:hover {
+            
+            & > a {
+                border-bottom: 2px solid $brand-red;
+            }
+            
             .sub-menu {
-                display: block;
+                display: none;
+                
+                @media (min-width: 768px) {
+                    display: block;
+                }
             }
         }
         
         &.menu-item-has-children {
             position: relative;
             
-            ::after {
-                content: "";
-                position: absolute;
-                top: 24px;
-                right: 8px;
-                width: 7px;
-                height: 5px;
-                background-image: url("../images/down-triangle.svg");
+            @media (min-width: 768px) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 24px;
+                    right: 5px;
+                    width: 7px;
+                    height: 5px;
+                    background-image: url("../images/down-triangle.svg");
+                }
             }
         }
         
@@ -55,16 +81,19 @@
             a {
                 color: $brand-red;
                 padding-top: 5px;
-                border-top: 3px solid $brand-red;
-                padding-top: 24px;
+                
+                @media (min-width: 768px) {
+                    padding-top: 34px;
+                    border-top: 3px solid $brand-red;
+                }
             }
         }
     }
     
-    
     .sub-menu {
         display: none;
         position: absolute;
+        width: 125px;
         left: 4px;
         margin-top: 15px;
         padding: 0;
@@ -74,5 +103,97 @@
     
     .sub-menu li {
         padding: 10px 15px;
+        
+        &:hover {
+            background-color: $brand-red;
+            
+            a {
+                color: white;
+            }
+        }
     }
+}
+
+.menu-item-cart {
+    padding-left: 18px !important;
+    
+    @media (min-width: 768px) {
+        margin-left: 13px;
+    }
+    
+    & > a {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        width: 30px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-left: 30px;
+        padding-bottom: 12px;
+        background: 0 50% no-repeat;
+        background-image: url("../images/cart-icon.svg");
+        
+        &:hover {
+            border-bottom: 2px solid $brand-red;
+        }
+    }
+    
+}
+
+.menu-item-search {
+    
+    & > a {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        width: 30px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-left: 30px;
+        padding-bottom: 12px;
+        background: 0 50% no-repeat;
+        background-image: url("../images/search-icon.svg");
+        
+        &:hover {
+            border-bottom: 2px solid $brand-red;
+        }
+    }
+    
+}
+
+// Mobile Menu Styles
+.menu-list {
+    display: none;
+    background-color: white;
+    padding: 50px 0;
+    
+    @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: unset;
+        padding: 0;
+    }
+    
+    .mobile-menu__toggle:checked ~ & {
+        display: block;
+        
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.toggle-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mobile-menu__toggle {
+    display: none;
 }

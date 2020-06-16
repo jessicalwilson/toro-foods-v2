@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body class="body">
+<body class="body <?php echo implode( ' ', get_body_class()); ?>">
 	<div class="site-container">
 		<!-- Closes in footer.php -->
 		<header class="header">
@@ -27,11 +27,13 @@
 				<div class="header__logo">
 					<a class="header__logo-link" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="header__logo-image" src="<?php echo $logo; ?>"></a>
 				</div>
-				<div class="header__menu">
+				<nav class="header__menu">
+					<label for="mobile-menu__toggle" class="toggle-label button button--primary">Menu</label>
+					<input type="checkbox" id="mobile-menu__toggle" class="mobile-menu__toggle">
 					<?php
 						if (has_nav_menu('header')) :
 							wp_nav_menu(array(
-								'container'       => 'nav',
+								'container'       => false,
 								'theme_location'  => 'header',
 								'container_id'    => 'menu-container',
 								'container_class' => 'menu-container',
@@ -40,8 +42,6 @@
 							));
 						endif;
 					?>
-					<a class="" href="">Cart</a>
-					<a class="" href="">Search</a>
-				</div>
+				</nav>
 			</div>
 		</header>

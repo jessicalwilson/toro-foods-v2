@@ -38,7 +38,7 @@
 		<div class="footer__company-information">
 			<h1 class="footer__heading">Connect With Us</h1>
 			<p class="footer__address"><?php echo $address; ?></p>
-			<a class="footer__phone-number" href="tel:<?php echo preg_replace('/[^0-9]/s', '', $phone_number); // strip non-numeric characters; 
+			<a class="footer__telephone" href="tel:<?php echo preg_replace('/[^0-9]/s', '', $phone_number); // strip non-numeric characters; 
 									?>"><?php echo $phone_number; ?></a>
 			<a class="footer__email" href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a>
 			<div class="footer__social-media">

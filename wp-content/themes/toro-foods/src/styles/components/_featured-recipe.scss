@@ -51,8 +51,12 @@
     }
 
     .recipe__chili {
+        background-image: url(../images/chili.svg);
+        background-repeat: no-repeat;
+        background-position: center;
         transform: rotate(75deg);
         width: 25px;
+        height: 20px;
         margin-top: 1rem;
     }
 
@@ -62,5 +66,33 @@
         font-size: 20px;
         color: white;
         line-height: 27px;
+    }
+
+    .recipe--featured .recipe__social-media {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 60px;
+        margin-bottom: 1em;
+    }
+
+    .recipe--featured .recipe__likes {
+        margin-right: 20px;
+    }
+
+    .recipe--featured .recipe__likes,
+    .recipe--featured .recipe__comments {
+        display: flex;
+        align-items: center;
+    }
+
+    .recipe--featured .recipe__likes p,
+    .recipe--featured .recipe__comments p {
+        font-weight: 600;
+    }
+
+    .recipe--featured .recipe__likes > p,
+    .recipe--featured .recipe__comments > p {
+        color: white;
+        padding: 0 5px;
     }
 }

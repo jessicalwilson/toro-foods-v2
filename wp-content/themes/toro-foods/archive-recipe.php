@@ -5,9 +5,26 @@ $page_for_recipes = get_page_for_post_type('recipe');
 $featured_recipe = get_field('featured_recipe', $page_for_recipes);
 $featured_recipe->subheading = get_field('subheading', $featured_recipe);
 $featured_recipe->like_count = get_field('like_count', $featured_recipe);
+$search_term = esc_html($_GET['r']);
+$spice_level = esc_html($_GET['spice_level']);
+$search_terms = $search_term || $spice_level ? true : false;
+
+$query = new WP_Query ( array(
+  'post_status' => 'publish',
+  'post_type' => 'recipe',
+  's' => $search_term,
+  'meta_query' => !$spice_level ? null : [
+    [
+      'key' => 'spice_level',
+      'value' => $spice_level,
+    ],
+  ],
+)); 
+
 ?>
 
 <main class="main">
+<?php if (!$search_terms) :?>
 
   <?php get_template_part('partials/hero'); ?>
 
@@ -25,7 +42,7 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
               <h3 class="recipe__subheading">
                 <?php echo $featured_recipe->subheading; ?>
               </h3>
-              <img class="recipe__chili" src ="">
+              <div class="recipe__chili"></div>
               <div class="recipe__excerpt">
                 <?php the_excerpt($featured_post->ID); ?>
               </div>
@@ -49,12 +66,13 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
           </div>
       </section>
   <?php endif; ?>
+<?php endif; ?>
     
   <?php get_template_part('partials/search-filters-recipe'); ?>
     
-  <?php if ( have_posts() ) : ?>
+  <?php if ( $query->have_posts() ) : ?>
     <div class="recipe-grid">
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       <?php $like_count = get_field('like_count', $post_id); ?>
         <article class="recipe-single">
           <div class="recipe-single__card">
@@ -63,7 +81,7 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
               <div class="recipe__excerpt">
                 <?php the_excerpt(); ?>
               </div>
-              <img class="spice-rating" src="" />
+              <img class="spice-rating" alt="<?php echo get_field('spice_level'); ?>" src="" />
             </div>
           </div>
           <div class="recipe__image">
@@ -86,10 +104,13 @@ $featured_recipe->like_count = get_field('like_count', $featured_recipe);
     <?php else : 
         _e( 'Sorry, no posts were found.', 'textdomain' ); ?>
     <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
       
-  <?php get_template_part('partials/instagram-callout'); ?>
-      
-  <?php get_template_part('partials/newsletter-sign-up'); ?>
+    <?php if (!$search_terms) :?>
+      <?php get_template_part('partials/instagram-callout'); ?>
+          
+      <?php get_template_part('partials/newsletter-sign-up'); ?>
+  <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

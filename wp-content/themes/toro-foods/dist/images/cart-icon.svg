@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="19px" viewBox="0 0 23 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Cart1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Cart1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="#979797" stroke-width="2">
+            <polygon id="Rectangle-53" points="3 2 23 2 18 13 5 13"></polygon>
+            <path d="M5,13 L3.3390387,13 C2.50988457,13 1.83772234,13.6721622 1.83772234,14.5013164 L1.83772234,14.5013164 C1.83772234,15.3304705 2.50988457,16.0026327 3.3390387,16.0026327 L22.0000002,16.0026327" id="Path-168"></path>
+            <circle id="Oval-29-Copy" cx="5" cy="18" r="1"></circle>
+            <circle id="Oval-29-Copy-2" cx="19" cy="18" r="1"></circle>
+            <path d="M0,0 C2,0 3,0.666666667 3,2" id="Path-169"></path>
+            <path d="M4,6 L21,6" id="Path-170"></path>
+        </g>
+    </g>
+</svg>

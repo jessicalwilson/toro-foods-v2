@@ -1,5 +1,8 @@
 .footer {
-    padding: 75px 135px 25px 135px;
+    background-image: url("../images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 75px 9% 25px 9%;
     color: rgba(39, 59, 73, 100);
     
     a {
@@ -8,32 +11,57 @@
     }
 
     .footer__top {
-        display: flex;
+        
+        @media (min-width: 900px) {
+            display: flex;
+        }
         
         .footer__logo-copy,
         .footer__menu,
         .footer__company-information,
         .footer__blog {
-            width: 25%;
+            
+            
+            @media (min-width: 900px) {
+                width: 25%;
+            }
+        }
+        
+        .footer__logo-copy {
+            margin-right: 1em;
         }
         
         .footer__heading {
             margin: 0;
-            margin-bottom: 1.5em;
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
+            margin-bottom: 1em;
+            font-family: $heading-font-family;
+            font-size: 16px;
             text-transform: uppercase;
         }
         
         .footer__nav-list {
             list-style-type: none;
+            margin-top: 0;
+            padding-left: 0;
+            
+            @media (min-width: 1024px) {
+                padding-left: 14%;
+            }
             
             .menu-item {
-                padding: 0.5em 0 0.5em 40px;
+                padding: 0.25em 0 0.25em 0;
                 color: $brand-red;
                 font-family: $heading-font-family;
                 font-size: 16px;
                 text-transform: uppercase;
+                
+                @media (min-width: 900px) {
+                    padding: 0.25em 0 0.5em 40px;
+                }
+                
+                &:first-child {
+                    padding-top: 0;
+                }
                 
                 &:hover {
                     text-decoration: underline;
@@ -48,13 +76,17 @@
             
             a {
                 &:hover {
-                    color: $brand-red;
                     text-decoration: underline;
                 }
             }
             
             .footer__address {
-                max-width: 50%;
+                max-width: 75%;
+                margin-bottom: 0.5em;
+                
+                @media (min-width: 900px) {
+                    max-width: 45%;
+                }
             }
             
             .footer__telephone,
@@ -62,14 +94,61 @@
                 display: block;
             }
             
+            .footer__telephone {
+                margin-bottom: 0.5em;
+            }
+            
             .footer__email {
                 color: $brand-red;
-                margin-top: 1em;
                 font-weight: 400;
             }
             
             .footer__social-media {
-                margin-top: 1em;
+                display: flex;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                
+                @media (min-width: 900px) {
+                    margin-top: 30px;
+                    margin-bottom: 0;
+                }
+                
+                .footer__instagram,
+                .footer__pinterest,
+                .footer__facebook,
+                .footer__linkedin {
+                    display: block;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    width: 35px;
+                    height: 35px;
+                    padding-left: 35px;
+                    padding-bottom: 40px;
+                    margin-right: 7px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    
+                    &:hover {
+                        border-bottom: 2px solid $brand-red;
+                    }
+                }
+                
+                .footer__instagram {
+                    margin-left: -5px;
+                    background-image: url("../images/social_instagram.svg");
+                }
+                
+                .footer__pinterest {
+                    background-image: url("../images/social_pinterest.svg");
+                }
+                
+                .footer__facebook {
+                    background-image: url("../images/social_facebook.svg");
+                }
+                
+                .footer__linkedin {
+                    background-image: url("../images/social_linkedin.svg");
+                }
             }
         }
         
@@ -77,9 +156,11 @@
             
             .blog__title {
                 color: $brand-red;
+                font-family: $body-font-family;
                 font-size: 16px;
                 font-weight: 400;
                 margin: 0;
+                margin-top: 1em;
             }
             
             .blog__excerpt {
@@ -96,12 +177,25 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        margin-top: 1.5em;
+        padding-top: 70px;
         
         .footer-utility__nav-list {
             display: flex;
             padding: 0 1em;
+            padding-left: 0;
             list-style-type: none;
+            
+            .menu-item {
+                padding: 0 1em;
+                
+                &:first-child {
+                    padding-left: 0;
+                }
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }
