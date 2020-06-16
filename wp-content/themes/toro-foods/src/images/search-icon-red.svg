@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="22px" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>ico_search</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Design" transform="translate(-455.000000, -1173.000000)" stroke="#EA5550">
+            <g id="Group-4" transform="translate(435.000000, 1154.000000)">
+                <g id="Search-Location1" transform="translate(31.900000, 29.600000) rotate(-90.000000) translate(-31.900000, -29.600000) translate(21.400000, 19.600000)">
+                    <g id="ico_search" transform="translate(0.713515, 0.000000)">
+                        <g id="Group-12" transform="translate(0.000000, 0.000000)">
+                            <circle id="Oval-20" stroke-width="2" cx="11.286485" cy="8" r="8"></circle>
+                            <path d="M5.37352152,13.7914365 L1.82520665e-13,19.164958" id="Path-104" stroke-width="2"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

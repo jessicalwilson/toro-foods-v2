@@ -25,48 +25,50 @@ $query = new WP_Query ( array(
 
 <main class="main">
 <?php if (!$search_terms) :?>
+  
+  <div class="hero-background">
+    <?php get_template_part('partials/hero'); ?>
 
-  <?php get_template_part('partials/hero'); ?>
-
-  <?php if ($featured_recipe) :?>
-      <section class="featured-recipe">
-          <div class="recipe__image-wrapper">
-              <?php the_post_thumbnail($featured_post->ID) ?>
-            </div>
-            
-          <div class="recipe__content">
-            <div class="recipe__inner">
-              <h2 class="recipe__heading">
-                <?php the_title($featured_post->ID); ?>
-              </h2>
-              <h3 class="recipe__subheading">
-                <?php echo $featured_recipe->subheading; ?>
-              </h3>
-              <div class="recipe__chili"></div>
-              <div class="recipe__excerpt">
-                <?php the_excerpt($featured_post->ID); ?>
+    <?php if ($featured_recipe) :?>
+        <section class="featured-recipe">
+            <div class="recipe__image-wrapper">
+                <?php the_post_thumbnail($featured_post->ID) ?>
               </div>
-              <a class="button button--primary" href="<?php the_permalink($featured_post->ID); ?>">Read More</a>
-            </div>
-            
-            <div class="recipe__social-media">
-              <div class="recipe__likes">
-                <a href=""><img class="icon icon-heart-white" src=""></a>
-                <p class="recipe__like-count">
-                  <?php echo $featured_recipe->like_count; ?>
-                </p>
+              
+            <div class="recipe__content">
+              <div class="recipe__inner">
+                <h2 class="recipe__heading">
+                  <?php the_title($featured_post->ID); ?>
+                </h2>
+                <h3 class="recipe__subheading">
+                  <?php echo $featured_recipe->subheading; ?>
+                </h3>
+                <div class="recipe__chili"></div>
+                <div class="recipe__excerpt">
+                  <?php the_excerpt($featured_post->ID); ?>
+                </div>
+                <a class="button button--primary" href="<?php the_permalink($featured_post->ID); ?>">Read More</a>
               </div>
-              <div class="recipe__comments">
-                <a href=""><img class=" icon icon-comment-white" src=""></a>
-                <p class="recipe__comment-count">
-                  <?php echo $featured_recipe->comment_count; ?>
-                </p>
+              
+              <div class="recipe__social-media">
+                <div class="recipe__likes">
+                  <a href=""><img class="icon icon-heart-white" src=""></a>
+                  <p class="recipe__like-count">
+                    <?php echo $featured_recipe->like_count; ?>
+                  </p>
+                </div>
+                <div class="recipe__comments">
+                  <a href=""><img class=" icon icon-comment-white" src=""></a>
+                  <p class="recipe__comment-count">
+                    <?php echo $featured_recipe->comment_count; ?>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-      </section>
+        </section>
+    <?php endif; ?>
   <?php endif; ?>
-<?php endif; ?>
+</div>
     
   <?php get_template_part('partials/search-filters-recipe'); ?>
     

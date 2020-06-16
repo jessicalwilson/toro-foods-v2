@@ -1,27 +1,93 @@
 .newsletter-sign-up {
-    display: flex;
-    align-items: center;
-    margin: 125px 0 111px 0;
-    padding: 0 120px;
+    margin: 40px 0 60px 0;
+    padding: 0 20px;
     
-    .gform_fields {
-        display: flex !important;
-        margin-top: 0;
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 125px 0 111px 0;
+        padding: 0 8%;
+    }
+    
+    .newsletter-heading {
+        margin-top: 16px;
+        margin-bottom: 0;
+        margin-right: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.25em;
+        text-align: center;
         
-        .gform_wrapper form {
+        @media (min-width: 768px) {
+            font-size: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            font-size: 24px;
+            text-align: left;
+        }
+    }
+    
+    #gform_1 {
+        
+        @media (min-width: 768px) {
             display: flex !important;
+            margin-top: 0;
+        }
+    
+        .gform_fields {
+            
+            @media (min-width: 768px) {
+                display: flex !important;
+                margin-top: 0;
+            }
+            
+            input {
+                height: 46px;
+                width: 100%;
+                margin-top: 0 !important;
+                padding-left: 1em;
+                border: 1px solid #AEB5BB !important;
+                border-radius: 3px !important;
+                
+                @media (min-width: 768px) {
+                    width: 150px !important;
+                }
+                
+                @media (min-width: 1200px) {
+                    width: 280px !important;
+                }
+            }
+            
+            input::placeholder {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 20px;
+            }
         }
         
-        input {
-            width: 280px !important;
-            margin-top: 0 !important;
-            border: 1px solid #AEB5BB !important;
-            border-radius: 2px !important;
-        }
-        
-        input::placeholder {
-            font-size: 16px;
-            line-height: 20px;
+        .gform_footer {
+            margin-top: 8px !important;
+            
+            &.top_label {
+                text-align: center;
+            }
+            
+            .gform_button {
+                padding: 12px 35px;
+                max-width: 75vw;
+                margin: 0 auto;
+                
+                @media (min-width: 768px) {
+                    max-width: 100%;
+                    margin: unset;
+                }
+                
+                &:hover {
+                    background-color: $brand-dark-red;
+                }
+            }
         }
     }
 }

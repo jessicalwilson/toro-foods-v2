@@ -39,7 +39,7 @@ input::placeholder {
 .button {
     color: white;
     display: block;
-    padding: 12px 50px;
+    padding: 12px 25px;
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
@@ -47,6 +47,10 @@ input::placeholder {
     background-color: #EA5550;
     border-radius: 3px;
     border: none;
+    
+    @media (min-width: 768px) {
+        padding: 12px 50px;
+    }
 }
 
 .button--primary {
