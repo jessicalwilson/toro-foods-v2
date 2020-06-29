@@ -103,7 +103,7 @@ $query = new WP_Query ( array(
     <?php wp_reset_postdata(); ?>
       
     <?php if (!$search_terms) :?>
-      <?php get_template_part('partials/instagram-callout'); ?>
+      <?php get_template_part('partials/instagram-grid'); ?>
           
       <?php get_template_part('partials/newsletter-sign-up'); ?>
   <?php endif; ?>

@@ -62,7 +62,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 18px;
     padding-right: 1em;
 }
 
@@ -74,34 +74,48 @@
 
 .recipe__likes {
     margin-right: 25px;
-
-    &::before {
-        content: '';
-        width: 27px;
-        height: 30px;
-        margin-right: 7px;
-        background-image: url('../images/heart-red-icon.svg');
-        background-repeat: no-repeat;
-    }
     
-    &:hover {
-        border-bottom: 2px solid $brand-red;
+    .recipe__likes__link {
+        display: inline-block;
+        position: relative;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            width: 27px;
+            height: 30px;
+            left: -32px;
+            background-image: url('../images/heart-red-icon.svg');
+            background-repeat: no-repeat;
+        }
+        
+        &:hover {
+            border-bottom: 2px solid $brand-red;
+        }
     }
+
 }
 
 .recipe__comments {
+    margin-left: 20px;
     
-    &::before {
-        content: '';
-        width: 27px;
-        height: 30px;
-        margin-right: 7px;
-        background-image: url('../images/comment-green-icon.svg');
-        background-repeat: no-repeat;
-    }
-    
-    &:hover {
-        border-bottom: 2px solid $brand-red;
+    .recipe__comments__link {
+        display: inline-block;
+        position: relative;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            width: 27px;
+            height: 30px;
+            left: -32px;
+            background-image: url('../images/comment-green-icon.svg');
+            background-repeat: no-repeat;
+        }
+        
+        &:hover {
+            border-bottom: 2px solid $brand-red;
+        }
     }
 }
 
