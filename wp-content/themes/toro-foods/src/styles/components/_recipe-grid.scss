@@ -1,8 +1,16 @@
 .recipe-grid {
-    padding: 0 135px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0 25px;
+    
+    @media (min-width: 768px) {
+        padding: 0 50px;
+    }
+    
+    @media (min-width: 1000px) {
+        padding: 0 135px;
+    }
 }
 
 .recipe-single {
@@ -11,13 +19,13 @@
     border-radius: 6px;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .recipe-single {
         width: calc((100% - 40px) / 2);
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
     .recipe-single {
         width: calc((100% - 60px) / 3);
     }
@@ -39,4 +47,68 @@
 
 .recipe__description {
     max-width: 75%;
+}
+
+// .spice-rating {
+//     background-image: url(../images/chili.svg);
+//     background-color: red;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     width: 25px;
+//     height: 25px;
+// }
+
+.recipe__social-media {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 1em;
+}
+
+.recipe__likes,
+.recipe__comments {
+    display: flex;
+    font-weight: 600;
+}
+
+.recipe__likes {
+    margin-right: 25px;
+
+    &::before {
+        content: '';
+        width: 27px;
+        height: 30px;
+        margin-right: 7px;
+        background-image: url('../images/heart-red-icon.svg');
+        background-repeat: no-repeat;
+    }
+    
+    &:hover {
+        border-bottom: 2px solid $brand-red;
+    }
+}
+
+.recipe__comments {
+    
+    &::before {
+        content: '';
+        width: 27px;
+        height: 30px;
+        margin-right: 7px;
+        background-image: url('../images/comment-green-icon.svg');
+        background-repeat: no-repeat;
+    }
+    
+    &:hover {
+        border-bottom: 2px solid $brand-red;
+    }
+}
+
+.recipe__load-more {
+    margin: 40px auto 100px;
+    
+    .button {
+        margin: 0 auto;
+    }
 }

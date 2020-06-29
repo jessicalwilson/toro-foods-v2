@@ -52,16 +52,10 @@ $query = new WP_Query ( array(
               
               <div class="recipe__social-media">
                 <div class="recipe__likes">
-                  <a href=""><img class="icon icon-heart-white" src=""></a>
-                  <p class="recipe__like-count">
-                    <?php echo $featured_recipe->like_count; ?>
-                  </p>
+                  <a class="recipe__likes__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->like_count; ?></a>
                 </div>
                 <div class="recipe__comments">
-                  <a href=""><img class=" icon icon-comment-white" src=""></a>
-                  <p class="recipe__comment-count">
-                    <?php echo $featured_recipe->comment_count; ?>
-                  </p>
+                  <a class="recipe__comments__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->comment_count; ?></a>
                 </div>
               </div>
             </div>
@@ -91,18 +85,18 @@ $query = new WP_Query ( array(
           </div>
           <div class="recipe__social-media">
             <div class="recipe__likes">
-              <a href=""><img class="icon icon--heart" src=""><?php echo $like_count ?></a>
+              <a class="recipe__likes__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $like_count ?></a>
             </div>
             <div class="recipe__comments">
-              <a href=""><img class="icon icon--comment" src=""><?php echo $post->comment_count ?></a>
+              <a class="recipe__comments__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $post->comment_count ?></a>
             </div>
           </div>
         </article>
         <?php endwhile; ?>
-        <div class="recipe__load-more">
-          <button class="button button--secondary">Load More Recipes</button>
-        </div>
-        </div>
+      </div>
+      <div class="recipe__load-more">
+        <button class="button button--secondary">Load More Recipes</button>
+      </div>
     <?php else : 
         _e( 'Sorry, no posts were found.', 'textdomain' ); ?>
     <?php endif; ?>

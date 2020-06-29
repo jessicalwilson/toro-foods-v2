@@ -4,7 +4,13 @@
     justify-content: center;
     color: white;
     text-align: center;
-    padding: 0;
+    padding: 0 40px;
+    
+    @media (min-width: 1059px) {
+        .instagram-grid {
+            padding: 0;
+        }
+    }
 }
 
 .instagram-grid img {
@@ -16,7 +22,7 @@
     margin-top: 20px;
 }
 
-@media only screen and (min-width: 1059px) {
+@media (min-width: 1059px) {
     .grid-box {
         width: calc(100% / 5);
     }
@@ -32,7 +38,7 @@
     background-color: #6FC4BE;
 }
 
-@media only screen and (min-width: 1059px) {
+@media (min-width: 1059px) {
     .instagram-grid__callout {
         width: calc((100% / 5) * 2);
     }
@@ -41,17 +47,18 @@
 .callout__heading {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
+    line-height: normal;
     margin-bottom: 0;
     padding-top: 0.5em;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .callout__heading {
         font-size: 34px;
     }
 }
 
-@media only screen and (min-width: 1250px) {
+@media (min-width: 1250px) {
     .callout__heading {
         font-size: 36px;
     }
@@ -68,7 +75,7 @@
     padding: 0 75px;
 }
 
-@media only screen and (min-width: 1250px) {
+@media (min-width: 1250px) {
     .callout__copy {
         font-size: 24px;
     }
@@ -96,7 +103,7 @@
     background-color: #C72F4C;
 }
 
-@media only screen and (min-width: 1059px) {
+@media (min-width: 1059px) {
     .grid-box--icon {
         display: block;
         flex-grow: 0;
