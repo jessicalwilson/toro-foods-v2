@@ -6,12 +6,20 @@
 ?>
 </div><!-- END: .site -->
 
-<?php $logo = get_field('logo', 'options'); ?>
-<?php $footer_copy = get_field('footer_copy', 'options'); ?>
+<?php
+$logo = get_field('logo', 'options');
+$footer_copy = get_field('footer_copy', 'options');
 
-<?php $address = get_field('address', 'options'); ?>
-<?php $phone_number = get_field('phone_number', 'options'); ?>
-<?php $contact_email = get_field('contact_email', 'options'); ?>
+$address = get_field('address', 'options');
+$phone_number = get_field('phone_number', 'options');
+$contact_email = get_field('contact_email', 'options');
+
+$instagram = get_field('instagram', 'options');
+$pinterest = get_field('pinterest', 'options');
+$facebook = get_field('facebook', 'options');
+$linkedin = get_field('linkedin', 'options');
+
+?>
 
 <footer class="footer">
 	<div class="footer__top">

@@ -1,21 +1,22 @@
-<section class="search-filters search-filters--recipe">
-    <div class="search__wrapper">
-        <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/recipes/' ) ); ?>">
-            <label for="search-recipes">
-                <input type="search" id="search-recipes" class="search__input--recipes" placeholder="Search Recipes" value="<?php echo get_search_query(); ?>" name="r" />
+<section class="recipe-search-filters">
+    <form role="search" method="get" class="recipe-search" action="<?php echo esc_url( home_url( '/recipes/' ) ); ?>">
+        <div class="recipe-search__keyword">
+            <label class="recipe-search__label" for="search-recipes__input--recipes">
+                <?php _e('Search Recipes', 'toro-foods'); ?>
             </label>
+            <input type="search" id="search-recipes__input--recipes" class="recipe-search__input" placeholder="Search Recipes" value="<?php echo get_search_query(); ?>" name="r" />
             <!-- <input type="hidden" name="post_type" value="recipe"> -->
-            <input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'twentytwenty' ); ?>" />
-        </form>
-    </div>
-    <div class="filter__wrapper">
-        <div class="filter__button">
-            <a class="filter__text" href="">Filter</a>
+            <input type="submit" class="recipe-search__submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'toro-foods' ); ?>" />
         </div>
-        <ul class="filter__list">
-            <li><a class="filter__link" href="">Filter 1</a></li>
-            <li><a class="filter__link" href="">Filter 2</a></li>
-            <li><a class="filter__link" href="">Filter 3</a></li>
-        </ul>
-    </div>
+        <div class="filters">
+            <div class="filters__button">
+                <a class="filters__button-text" href="">Filter</a>
+            </div>
+            <ul class="filters__list">
+                <li><a class="filters__link" href="">Breakfast</a></li>
+                <li><a class="filters__link" href="">Lunch</a></li>
+                <li><a class="filters__link" href="">Dinner</a></li>
+            </ul>
+        </div>
+    </form>
 </section>

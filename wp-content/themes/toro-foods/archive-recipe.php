@@ -77,7 +77,9 @@ $query = new WP_Query ( array(
               <div class="recipe__excerpt">
                 <?php the_excerpt(); ?>
               </div>
-              <img class="spice-rating" alt="<?php echo get_field('spice_level'); ?>" src="" />
+              <p class="spice-level spice-level--<?php echo get_field('spice_level'); ?>">
+                <?php _e('Spice Level', 'toro-foods'); ?> <?php echo get_field('spice_level'); ?>
+              </p>
             </div>
           </div>
           <div class="recipe__image">
@@ -104,7 +106,7 @@ $query = new WP_Query ( array(
       
     <?php if (!$search_terms) :?>
       <?php get_template_part('partials/instagram-grid'); ?>
-          
+      
       <?php get_template_part('partials/newsletter-sign-up'); ?>
   <?php endif; ?>
 </main>

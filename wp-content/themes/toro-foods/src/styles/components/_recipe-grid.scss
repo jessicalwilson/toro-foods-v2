@@ -17,6 +17,8 @@
     margin-top: 40px;
     border: solid 2px #EEE;
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -49,14 +51,33 @@
     max-width: 75%;
 }
 
-// .spice-rating {
-//     background-image: url(../images/chili.svg);
-//     background-color: red;
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     width: 25px;
-//     height: 25px;
-// }
+.spice-level {
+    background-image: url(../images/chili-empty.svg);
+    width: (9px * 5);
+    height: 18px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url(../images/chili-fill.svg);
+        height: 18px;
+    }
+    
+    @at-root .spice-level--1::before { width: (9px * 1); }
+    @at-root .spice-level--2::before { width: (9px * 2); }
+    @at-root .spice-level--3::before { width: (9px * 3); }
+    @at-root .spice-level--4::before { width: (9px * 4); }
+    @at-root .spice-level--5::before { width: (9px * 5); }
+}
+
+.recipe__image {
+    margin-top: auto;
+}
 
 .recipe__social-media {
     display: flex;
