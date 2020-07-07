@@ -90,6 +90,13 @@
     p {
         margin: 0;
     }
+    
+    a {
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 @media (min-width: 1250px) {

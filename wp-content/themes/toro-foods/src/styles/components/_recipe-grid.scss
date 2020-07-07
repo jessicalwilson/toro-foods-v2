@@ -24,6 +24,11 @@
 @media (min-width: 768px) {
     .recipe {
         width: calc((100% - 40px) / 2);
+        transition: transform 0.4s;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -35,15 +40,13 @@
 
 .recipe__copy {
     font-size: 16px;
-    padding: 0 40px;
-    margin-bottom: 2em;
+    padding: 2em 40px;
 }
 
 .recipe__title {
     font-family: $heading-font-family;
     font-size: 20px;
     font-weight: $heading-extra-bold;
-    margin-top: 2em;
     margin-bottom: 0.5em;
 }
 
@@ -96,9 +99,10 @@
 .recipe__likes {
     margin-right: 25px;
     
-    .recipe__likes__link {
+    .recipe__likes--link {
         display: inline-block;
         position: relative;
+        border-bottom: 2px solid transparent;
         
         &::before {
             content: '';
@@ -120,9 +124,10 @@
 .recipe__comments {
     margin-left: 20px;
     
-    .recipe__comments__link {
+    .recipe__comments--link {
         display: inline-block;
         position: relative;
+        border-bottom: 2px solid transparent;
         
         &::before {
             content: '';

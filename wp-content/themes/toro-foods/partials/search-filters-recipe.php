@@ -16,7 +16,7 @@ $spice_level = esc_html($_GET['spice-level']);
         </div>
         <div class="filters">
             <div class="filters__button">
-                <a class="filters__button-text" href="">Filter</a>
+                <div class="filters__button-text">Filter</div>
             </div>
             <ul class="filters__list">
                 <li><input type="radio" name="spice-level" id="spice-level--1" value="1" class="filters__input"> <label for="spice-level--1">Spice Level 1</label></input></li>

@@ -9,9 +9,11 @@
     <?php if ($query->have_posts()) : ?>
 
         <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div>
-                <h2 class="blog__title"><?php the_title(); ?></h2>
-                <div class="blog__excerpt"><?php the_excerpt(); ?></div>
+            <div class="blog">
+                <a class="blog__link" href="<?php echo the_permalink() ;?>">
+                    <h2 class="blog__title"><?php the_title(); ?></h2>
+                    <div class="blog__excerpt"><?php the_excerpt(); ?></div>
+                </a>
             </div>
 
         <?php endwhile; ?>

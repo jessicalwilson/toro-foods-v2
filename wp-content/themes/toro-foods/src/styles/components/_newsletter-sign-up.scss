@@ -78,6 +78,7 @@
                 padding: 12px 35px;
                 max-width: 75vw;
                 margin: 0 auto;
+                transition: background-color 0.4s;
                 
                 @media (min-width: 768px) {
                     max-width: 100%;

@@ -49,11 +49,11 @@ $linkedin = get_field('linkedin', 'options');
 			<a class="footer__telephone" href="tel:<?php echo preg_replace('/[^0-9]/s', '', $phone_number); // strip non-numeric characters; 
 									?>"><?php echo $phone_number; ?></a>
 			<a class="footer__email" href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a>
-			<div class="footer__social-media">
-				<a class="footer__instagram" href="<?php echo $instagram; ?>">Instagram</a>
-				<a class="footer__pinterest" href="<?php echo $pinterest; ?>">Pinterest</a>
-				<a class="footer__facebook" href="<?php echo $facebook; ?>">Facebook</a>
-				<a class="footer__linkedin" href="<?php echo $linkedin; ?>">LinkedIn</a>
+			<div class="footer__social-media social-media">
+				<a class="social-media__icon social-media__icon--instagram" href="<?php echo $instagram; ?>">Instagram</a>
+				<a class="social-media__icon social-media__icon--pinterest" href="<?php echo $pinterest; ?>">Pinterest</a>
+				<a class="social-media__icon social-media__icon--facebook" href="<?php echo $facebook; ?>">Facebook</a>
+				<a class="social-media__icon social-media__icon--linkedin" href="<?php echo $linkedin; ?>">LinkedIn</a>
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@ $linkedin = get_field('linkedin', 'options');
 	</div>
 
 	<div class="footer__bottom">
-		<div class="footer__utility-menu">
+		<div class="footer-utility">
 			<?php
 			if (has_nav_menu('footer-utility')) :
 				wp_nav_menu(array(

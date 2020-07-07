@@ -34,7 +34,7 @@ $query = new WP_Query ( array(
         <section class="featured-recipe">
             <div class="recipe__image-wrapper">
                 <?php the_post_thumbnail($featured_post->ID) ?>
-              </div>
+            </div>
               
             <div class="recipe__content">
               <div class="recipe__inner">
@@ -53,10 +53,10 @@ $query = new WP_Query ( array(
               
               <div class="recipe__meta">
                 <div class="recipe__likes">
-                  <a class="recipe__likes__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->like_count; ?></a>
+                  <a class="recipe__likes--link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->like_count; ?></a>
                 </div>
                 <div class="recipe__comments">
-                  <a class="recipe__comments__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->comment_count; ?></a>
+                  <a class="recipe__comments--link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->comment_count; ?></a>
                 </div>
               </div>
             </div>
@@ -90,10 +90,10 @@ $query = new WP_Query ( array(
           </div>
           <div class="recipe__meta">
             <div class="recipe__likes">
-              <a class="recipe__likes__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $like_count ?></a>
+              <a class="recipe__likes--link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $like_count ?></a>
             </div>
             <div class="recipe__comments">
-              <a class="recipe__comments__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $post->comment_count ?></a>
+              <a class="recipe__comments--link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $post->comment_count ?></a>
             </div>
           </div>
         </article>

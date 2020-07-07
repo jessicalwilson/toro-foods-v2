@@ -56,11 +56,13 @@ input::placeholder {
 .button--primary {
     border-bottom: 2px solid #C72F4C;
     border-right: 2px solid #C72F4C;
+    transition: background-color 0.4s;
+    
+    &:hover {
+        background-color: #C72F4C;
+    }
 }
 
-.button--primary:hover {
-    background-color: #C72F4C;
-}
 
 .button--secondary {
     color:#EA5550;
@@ -69,15 +71,14 @@ input::placeholder {
     border: 1px solid #EA5550;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
-    transition-property: background-color;
-    transition-duration: .3s;
-    transition-timing-function: ease-in-out;
+    transition: background-color 0.4s;
+    
+    &:hover {
+        color: white;
+        background-color: #EA5550;
+    }
 }
 
-.button--secondary:hover {
-    color: white;
-    background-color: #EA5550;
-}
 
 .icon:hover {
     opacity: .75;
