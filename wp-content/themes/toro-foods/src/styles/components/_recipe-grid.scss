@@ -13,7 +13,7 @@
     }
 }
 
-.recipe-single {
+.recipe {
     margin-top: 40px;
     border: solid 2px #EEE;
     border-radius: 6px;
@@ -22,13 +22,13 @@
 }
 
 @media (min-width: 768px) {
-    .recipe-single {
+    .recipe {
         width: calc((100% - 40px) / 2);
     }
 }
 
 @media (min-width: 1200px) {
-    .recipe-single {
+    .recipe {
         width: calc((100% - 60px) / 3);
     }
 }
@@ -79,7 +79,7 @@
     margin-top: auto;
 }
 
-.recipe__social-media {
+.recipe__meta {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;

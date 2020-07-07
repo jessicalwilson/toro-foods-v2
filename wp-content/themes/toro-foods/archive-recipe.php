@@ -51,7 +51,7 @@ $query = new WP_Query ( array(
                 <a class="button button--primary" href="<?php the_permalink($featured_post->ID); ?>">Read More</a>
               </div>
               
-              <div class="recipe__social-media">
+              <div class="recipe__meta">
                 <div class="recipe__likes">
                   <a class="recipe__likes__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $featured_recipe->like_count; ?></a>
                 </div>
@@ -71,22 +71,24 @@ $query = new WP_Query ( array(
     <div class="recipe-grid">
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       <?php $like_count = get_field('like_count', $post_id); ?>
-        <article class="recipe-single">
-          <div class="recipe-single__card">
-            <div class="recipe__copy">
-              <h4 class="recipe__title"><?php the_title(); ?></h4>
-              <div class="recipe__excerpt">
-                <?php the_excerpt(); ?>
+        <article class="recipe">
+          <div class="recipe__inner">
+            <a class="recipe__link" href="<?php the_permalink($featured_post->ID); ?>">
+              <div class="recipe__copy">
+                <h4 class="recipe__title"><?php the_title(); ?></h4>
+                <div class="recipe__excerpt">
+                  <?php the_excerpt(); ?>
+                </div>
+                <p class="recipe__spice-level spice-level spice-level--<?php echo get_field('spice_level'); ?>" title="<?php echo get_field('spice_level'); ?>">
+                  <?php _e('Spice Level', 'toro-foods'); ?> <?php echo get_field('spice_level'); ?>
+                </p>
               </div>
-              <p class="spice-level spice-level--<?php echo get_field('spice_level'); ?>">
-                <?php _e('Spice Level', 'toro-foods'); ?> <?php echo get_field('spice_level'); ?>
-              </p>
-            </div>
+            </a>
           </div>
           <div class="recipe__image">
-            <?php the_post_thumbnail(); ?>
+            <a class="recipe__link" href="<?php the_permalink($featured_post->ID); ?>"><?php the_post_thumbnail(); ?></a>
           </div>
-          <div class="recipe__social-media">
+          <div class="recipe__meta">
             <div class="recipe__likes">
               <a class="recipe__likes__link" href="<?php the_permalink($featured_post->ID); ?>"><?php echo $like_count ?></a>
             </div>
