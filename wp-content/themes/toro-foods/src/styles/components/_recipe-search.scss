@@ -112,11 +112,16 @@
     }
 }
 
-.filters__link {
-    display: block;
-    padding: 12px 28px;
+.filters__input {
+    display: none;
     
-    &:hover {
-        background-color: $brand-dark-red;
+    & + label {
+        display: block;
+        padding: 12px 28px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $brand-dark-red;
+        }
     }
 }

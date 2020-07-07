@@ -6,11 +6,12 @@ $featured_recipe = get_field('featured_recipe', $page_for_recipes);
 $featured_recipe->subheading = get_field('subheading', $featured_recipe);
 $featured_recipe->like_count = get_field('like_count', $featured_recipe);
 $search_term = esc_html($_GET['r']);
-$spice_level = esc_html($_GET['spice_level']);
+$spice_level = esc_html($_GET['spice-level']);
 $search_terms = $search_term || $spice_level ? true : false;
 
 $query = new WP_Query ( array(
   'post_status' => 'publish',
+  'post__not_in' => [$featured_recipe->ID],
   'post_type' => 'recipe',
   's' => $search_term,
   'meta_query' => !$spice_level ? null : [
@@ -19,7 +20,7 @@ $query = new WP_Query ( array(
       'value' => $spice_level,
     ],
   ],
-)); 
+));
 
 ?>
 
@@ -100,7 +101,7 @@ $query = new WP_Query ( array(
         <button class="button button--secondary">Load More Recipes</button>
       </div>
     <?php else : 
-        _e( 'Sorry, no posts were found.', 'textdomain' ); ?>
+        _e( 'Sorry, no posts were found.', 'toro-foods' ); ?>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
       
