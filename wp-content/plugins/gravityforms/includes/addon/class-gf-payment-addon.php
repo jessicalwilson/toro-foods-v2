@@ -651,8 +651,10 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 		if ( $performed_authorization && ! rgar( $this->authorization, 'is_authorized' ) ) {
 			$validation_result = $this->get_validation_result( $validation_result, $this->authorization );
 
-			//Setting up current page to point to the credit card page since that will be the highlighted field
-			GFFormDisplay::set_current_page( $validation_result['form']['id'], $validation_result['credit_card_page'] );
+			// Setting up current page to point to the credit card page since that will be the highlighted field.
+			// If "credit_card_page" is missing from $validation_result, the current page will be set to 0.
+			$current_page = intval( rgar( $validation_result, 'credit_card_page' ) );
+			GFFormDisplay::set_current_page( $validation_result['form']['id'], $current_page );
 		}
 
 		return $validation_result;
@@ -1434,6 +1436,11 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 			);
 			$amount += $products['shipping']['price'];
 		}
+
+		// Round amount to resolve floating point precision issues.
+		$currency = RGCurrency::get_currency( $entry['currency'] );
+		$decimals = rgar( $currency, 'decimals', 0 );
+		$amount   = GFCommon::round_number( $amount, $decimals );
 
 		return array(
 			'payment_amount' => $amount,
@@ -2451,9 +2458,10 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 						'tooltip' => '<h6>' . esc_html__( 'Recurring Times', 'gravityforms' ) . '</h6>' . esc_html__( 'Select how many times the recurring payment should be made.  The default is to bill the customer until the subscription is canceled.', 'gravityforms' )
 					),
 					array(
-						'name'  => 'setupFee',
-						'label' => esc_html__( 'Setup Fee', 'gravityforms' ),
-						'type'  => 'setup_fee',
+						'name'   => 'setupFee',
+						'label'  => esc_html__( 'Setup Fee', 'gravityforms' ),
+						'type'   => 'setup_fee',
+						'hidden' => $this->get_setting( 'trial_enabled' ),
 					),
 					array(
 						'name'    => 'trial',
@@ -2582,7 +2590,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 					'label'    => esc_html__( 'Enabled', 'gravityforms' ),
 					'name'     => $field['name'] . '_enabled',
 					'value'    => '1',
-					'onchange' => "if(jQuery(this).prop('checked')){jQuery('#{$field['name']}_product').show('slow'); jQuery('#gaddon-setting-row-trial').hide('slow');} else {jQuery('#{$field['name']}_product').hide('slow'); jQuery('#gaddon-setting-row-trial').show('slow');}",
+					'onchange' => "if(jQuery(this).prop('checked')){jQuery('#{$field['name']}_product').show(); jQuery('#gaddon-setting-row-trial').hide();} else {jQuery('#{$field['name']}_product').hide(); jQuery('#gaddon-setting-row-trial').show();}",
 				),
 			)
 		);
@@ -2611,7 +2619,7 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
 	public function set_trial_onchange( $field ) {
 
-		return "if(jQuery(this).prop('checked')){jQuery('#{$field['name']}_product').show('slow');if (jQuery('#{$field['name']}_product').val() == 'enter_amount'){jQuery('#{$field['name']}_amount').show();}} else {jQuery('#{$field['name']}_product').hide('slow');jQuery('#{$field['name']}_amount').hide();}";
+		return "if(jQuery(this).prop('checked')){jQuery('#{$field['name']}_product').show();if (jQuery('#{$field['name']}_product').val() == 'enter_amount'){jQuery('#{$field['name']}_amount').show();}} else {jQuery('#{$field['name']}_product').hide();jQuery('#{$field['name']}_amount').hide();}";
 
 	}
 
