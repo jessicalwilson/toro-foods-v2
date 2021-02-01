@@ -1,0 +1,19 @@
+.wp-block-cover {
+  width: auto;
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &.alignfull {
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+}
+
+.wp-block-cover__inner-container {
+  max-width: $block-max-width-740px;
+  color: inherit !important;
+}

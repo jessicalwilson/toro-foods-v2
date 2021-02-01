@@ -1,0 +1,21 @@
+.wp-block-group {
+  @extend %clear;
+  clear: both;
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &.alignfull.has-background {
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+}
+
+.wp-block-group__inner-container {
+  max-width: $block-max-width-740px;
+  margin-right: auto;
+  margin-left: auto;
+}

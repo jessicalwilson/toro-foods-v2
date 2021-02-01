@@ -1,0 +1,134 @@
+$media-wp-block-media-text-desktop: 601px !default;
+
+.wp-block-media-text {
+
+  @media (min-width: $media-wp-block-media-text-desktop) {}
+
+  & + & {
+    margin-top: 2rem;
+  }
+
+  &.has-background {
+    padding: 0;
+
+    // & + & {
+    //   margin-top: 0;
+    // }
+  }
+
+  &.alignwide.has-background {}
+
+  &.alignfull.has-background {
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+
+  &.is-stacked-on-mobile {}
+
+  &.is-vertically-aligned-top {}
+
+  &.is-style-default {}
+}
+
+.wp-block-media-text__media {
+
+  .is-image-fill & {
+    position: relative;
+  }
+
+  .wp-block-media-text & { // override wordpress overly nested styles
+
+  }
+
+  a {
+    display: block;
+
+    .is-image-fill & {
+      @extend %cover;
+    }
+  }
+
+  img {
+
+    .is-image-fill & {
+      display: none;
+    }
+  }
+
+  .wp-block-media-text.has-media-on-the-right & { // override wordpress overly nested styles
+
+    @media (max-width: ($media-wp-block-media-text-desktop - 1px)) {
+      margin-top: 1rem;
+    }
+    @media (min-width: $media-wp-block-media-text-desktop) {
+      margin-right: 0;
+    }
+
+    img {}
+  }
+
+  .wp-block-media-text.has-media-on-the-right.has-background & {
+    margin-top: 0;
+  }
+}
+
+.wp-block-media-text__content {
+
+  .wp-block-media-text & { // override wordpress overly nested styles
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (max-width: ($media-wp-block-media-text-desktop - 1px)) {
+      margin-top: 1rem;
+    }
+    @media (min-width: $media-wp-block-media-text-desktop) {
+      @include lock(padding-left, 16px, 58px);
+    }
+  }
+
+  .wp-block-media-text.alignfull & {
+    @include lock(padding-right, 16px, 58px);
+  }
+
+  .wp-block-media-text.is-stacked-on-mobile.alignfull & {
+
+    @media (max-width: ($media-wp-block-media-text-desktop - 1px)) {
+      @include lock(padding-right, 16px, 58px);
+      @include lock(padding-left, 16px, 58px);
+    }
+  }
+
+  .wp-block-media-text.has-background & {
+    @include lock(padding, 16px, 58px);
+    margin-top: 0;
+  }
+
+  .wp-block-media-text.has-media-on-the-right & { // override wordpress overly nested styles
+
+    @media (max-width: ($media-wp-block-media-text-desktop - 1px)) {
+      margin-top: 0;
+    }
+    @media (min-width: $media-wp-block-media-text-desktop) {
+      @include lock(padding-right, 16px, 58px);
+      padding-left: 0;
+    }
+  }
+
+  .wp-block-media-text.has-media-on-the-right.alignfull & {
+    @include lock(padding-left, 16px, 58px);
+  }
+
+  .wp-block-media-text.has-media-on-the-right.has-background & {
+
+    @media (min-width: $media-wp-block-media-text-desktop) {
+      @include lock(padding-left, 16px, 58px);
+    }
+  }
+
+  h3 {
+    border-bottom: 0;
+    color: null;
+  }
+}

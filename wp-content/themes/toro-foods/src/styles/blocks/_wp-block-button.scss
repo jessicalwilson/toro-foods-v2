@@ -1,0 +1,34 @@
+.wp-block-button {
+
+  // &:last-child {
+  //   margin-right: 0;
+  // }
+
+  .wp-block-buttons & {
+    margin: 0;
+    // margin: 0.5rem;
+    margin-right: 0.5rem; // match .wp-block-buttons margin-x
+    margin-left: 0.5rem; // match .wp-block-buttons margin-x
+    // margin-bottom: 0;
+  }
+}
+
+.wp-block-button__link {
+  @extend %a-button !optional;
+
+  .is-style-fill & {
+    @extend %a-button--background !optional;
+  }
+
+  .is-style-outline & {
+    @extend %a-button--border !optional;
+  }
+}
+
+[class="wp-block-button"] {
+
+  .wp-block-button__link {
+    @extend %a-button !optional;
+    @extend %a-button--background !optional;
+  }
+}

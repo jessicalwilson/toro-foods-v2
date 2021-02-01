@@ -1,41 +1,3 @@
-body {
-    color: rgba(39,59,73,100);
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: unset;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.site-container {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-.input {
-    color: rgba(39, 59, 73, 100);
-    font-size: 18px;
-    border-radius: 2px;
-    border: 1px solid #AEB5BB;
-    padding-left: 2px;
-}
-
-input::placeholder {
-    color: #C9CED2;
-    font-family: "Source Sans Pro";
-    font-size: 18px;
-    line-height: 23px;
-}
-
 .button {
     color: white;
     display: block;
@@ -77,9 +39,4 @@ input::placeholder {
         color: white;
         background-color: #EA5550;
     }
-}
-
-
-.icon:hover {
-    opacity: .75;
 }

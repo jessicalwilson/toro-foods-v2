@@ -1,0 +1,17 @@
+/**
+ * Strip Unit
+ *
+ * Remove unit from value.
+ *
+ * @package Carbon-Lumberjack
+ * @subpackage Styles
+ * @since 2.0.0
+ */
+ @function strip_unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+  
+    @return $number;
+  }
+  

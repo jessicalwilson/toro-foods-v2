@@ -1,13 +1,37 @@
 @import 'node_modules/normalize.scss/normalize';
-@import 'toolbox/variables';
-@import 'toolbox/typography';
-@import 'toolbox/base';
-@import 'toolbox/mixins';
-@import 'components/recipe-grid';
-@import 'components/header';
-@import 'components/footer';
-@import 'components/hero';
+
+@import 'setup/lock';
+@import 'setup/mixins';
+@import 'setup/strip-unit';
+@import 'setup/typography';
+@import 'setup/variables';
+
+@import 'components/button';
 @import 'components/featured-recipe';
-@import 'components/recipe-search';
+@import 'components/footer';
+@import 'components/header';
 @import 'components/instagram-grid';
+@import 'components/hero';
 @import 'components/newsletter-sign-up';
+@import 'components/recipe-grid';
+@import 'components/recipe-search';
+@import 'components/related-posts';
+
+// @import 'blocks/wp-block-button';
+// @import 'blocks/wp-block-buttons';
+// @import 'blocks/wp-block-column';
+// @import 'blocks/wp-block-columns';
+// @import 'blocks/wp-block-cover';
+// @import 'blocks/wp-block-gallery';
+// @import 'blocks/wp-block-group';
+// @import 'blocks/wp-block-image';
+// @import 'blocks/wp-block-latest-posts';
+// @import 'blocks/wp-block-media-text';
+// @import 'blocks/wp-block-pullquote';
+// @import 'blocks/wp-block-quote';
+// @import 'blocks/wp-block-separator';
+// @import 'blocks/wp-block-table';
+// @import 'blocks/wp-block';
+
+@import 'layout/content';
+@import 'layout/global';

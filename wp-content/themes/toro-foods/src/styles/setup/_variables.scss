@@ -62,6 +62,24 @@ $gray-55_15a: rgba($gray-55, .15);
 $gray-80_85a: rgba($gray-80, .85);
 $gray-2_90a: rgba($gray-2, .9);
 
+/**
+ * @requires /config/app.php editor-color-palette
+ *
+ * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
+ */
+//  $color-palette: (
+//     'baseline-gray-1': $color-baseline-gray-1,
+//     'baseline-gray-2': $color-baseline-gray-2,
+//     'baseline-gray-3': $color-baseline-gray-3,
+//     'baseline-gray-4': $color-baseline-gray-4,
+//     'baseline-gray-5': $color-baseline-gray-5,
+//     'baseline-gray-6': $color-baseline-gray-6,
+//     'baseline-gray-7': $color-baseline-gray-7,
+//     'black': 'black',
+//     'white': 'white',
+//     'transparent': 'transparent',
+//   );
+
 
 //TRANSITIONS
 $global-transition-time: 300ms;
@@ -81,6 +99,13 @@ $column-gutter: 30px;
 
 // columns in the grid
 $total-columns: 12;
+
+$site-max-width-1920px: 1920px;
+$inner-max-width-1440px: 1440px;
+$alignwide-max-width-1128px: 1128px; // arbitrary .alignwide width and inner content width
+$alignfull-max-width-1920px: $site-max-width-1920px;
+$block-max-width-740px: 740px;
+$secondary-max-width-288px: 288px;
 
 //Breakpoints
 $baby-lap-break: 421px;

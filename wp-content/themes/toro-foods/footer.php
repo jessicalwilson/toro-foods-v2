@@ -22,60 +22,62 @@ $linkedin = get_field('linkedin', 'options');
 ?>
 
 <footer class="footer">
-	<div class="footer__top">
-		<div class="footer__logo-copy">
-			<img class="footer__logo" src="<?php echo $logo; ?>">
-			<p class="footer__copy"><?php echo $footer_copy; ?></p>
-		</div>
-
-		<div class="footer__menu">
-			<?php
-			if (has_nav_menu('footer')) :
-				wp_nav_menu(array(
-					'container'       => 'nav',
-					'theme_location'  => 'footer',
-					'container_id'    => 'footer__nav',
-					'container_class' => 'footer__nav',
-					'menu_id'         => 'footer__nav-list',
-					'menu_class'      => 'footer__nav-list',
-				));
-			endif;
-			?>
-		</div>
-
-		<div class="footer__company-information">
-			<h1 class="footer__heading">Connect With Us</h1>
-			<p class="footer__address"><?php echo $address; ?></p>
-			<a class="footer__telephone" href="tel:<?php echo preg_replace('/[^0-9]/s', '', $phone_number); // strip non-numeric characters; 
-									?>"><?php echo $phone_number; ?></a>
-			<a class="footer__email" href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a>
-			<div class="footer__social-media social-media">
-				<a class="social-media__icon social-media__icon--instagram" href="<?php echo $instagram; ?>">Instagram</a>
-				<a class="social-media__icon social-media__icon--pinterest" href="<?php echo $pinterest; ?>">Pinterest</a>
-				<a class="social-media__icon social-media__icon--facebook" href="<?php echo $facebook; ?>">Facebook</a>
-				<a class="social-media__icon social-media__icon--linkedin" href="<?php echo $linkedin; ?>">LinkedIn</a>
+	<div class="footer__inner">
+		<div class="footer__top">
+			<div class="footer__logo-copy">
+				<img class="footer__logo" src="<?php echo $logo; ?>">
+				<p class="footer__copy"><?php echo $footer_copy; ?></p>
 			</div>
+
+			<div class="footer__menu">
+				<?php
+				if (has_nav_menu('footer')) :
+					wp_nav_menu(array(
+						'container'       => 'nav',
+						'theme_location'  => 'footer',
+						'container_id'    => 'footer__nav',
+						'container_class' => 'footer__nav',
+						'menu_id'         => 'footer__nav-list',
+						'menu_class'      => 'footer__nav-list',
+					));
+				endif;
+				?>
+			</div>
+
+			<div class="footer__company-information">
+				<h1 class="footer__heading">Connect With Us</h1>
+				<p class="footer__address"><?php echo $address; ?></p>
+				<a class="footer__telephone" href="tel:<?php echo preg_replace('/[^0-9]/s', '', $phone_number); // strip non-numeric characters; 
+										?>"><?php echo $phone_number; ?></a>
+				<a class="footer__email" href="mailto:<?php echo $contact_email; ?>"><?php echo $contact_email; ?></a>
+				<div class="footer__social-media social-media">
+					<a class="social-media__icon social-media__icon--instagram" href="<?php echo $instagram; ?>">Instagram</a>
+					<a class="social-media__icon social-media__icon--pinterest" href="<?php echo $pinterest; ?>">Pinterest</a>
+					<a class="social-media__icon social-media__icon--facebook" href="<?php echo $facebook; ?>">Facebook</a>
+					<a class="social-media__icon social-media__icon--linkedin" href="<?php echo $linkedin; ?>">LinkedIn</a>
+				</div>
+			</div>
+
+			<?php get_template_part('partials/footer-blog'); ?>
 		</div>
 
-		<?php get_template_part('partials/footer-blog'); ?>
-	</div>
-
-	<div class="footer__bottom">
-		<div class="footer-utility">
-			<?php
-			if (has_nav_menu('footer-utility')) :
-				wp_nav_menu(array(
-					'container'       => 'nav',
-					'theme_location'  => 'footer-utility',
-					'container_id'    => 'footer-utility__nav',
-					'container_class' => 'footer-utility__nav',
-					'menu_id'         => 'footer-utility__nav-list',
-					'menu_class'      => 'footer-utility__nav-list',
-				));
-			endif;
-			?>
+		<div class="footer__bottom">
+			<div class="footer-utility">
+				<?php
+				if (has_nav_menu('footer-utility')) :
+					wp_nav_menu(array(
+						'container'       => 'nav',
+						'theme_location'  => 'footer-utility',
+						'container_id'    => 'footer-utility__nav',
+						'container_class' => 'footer-utility__nav',
+						'menu_id'         => 'footer-utility__nav-list',
+						'menu_class'      => 'footer-utility__nav-list',
+					));
+				endif;
+				?>
+			</div>
+			<p class="footer__copyright">Copyright &copy; <?php echo date('Y') ?> Toro Foods</p>
 		</div>
-		<p class="footer__copyright">Copyright &copy; <?php echo date('Y') ?> Toro Foods</p>
 	</div>
 
 	<?php wp_footer(); ?>

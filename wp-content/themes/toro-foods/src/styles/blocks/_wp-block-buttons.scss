@@ -1,0 +1,41 @@
+.wp-block-buttons {
+  clear: both;
+  margin-top: 1rem;
+  margin-left: -0.5rem; // match .wp-block-button margin-x
+  margin-right: -0.5rem; // match .wp-block-button margin-x
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.alignright,
+  &.alignleft {
+    float: none;
+    max-width: none;
+  }
+
+  &.alignright {
+    margin-left: 0;
+    text-align: right;
+  }
+
+  &.alignleft {
+    margin-right: 0;
+    text-align: left;
+  }
+}
+
+[data-type="core/buttons"] {
+  clear: both;
+  margin-right: auto;
+  margin-left: auto;
+
+  .block-editor-inner-blocks {
+    margin-left: -8px; // match .wp-block-button margin-x
+    margin-right: -8px; // match .wp-block-button margin-x
+  }
+}

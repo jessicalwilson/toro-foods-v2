@@ -1,0 +1,58 @@
+.article {
+    max-width: 750px;
+    margin: 0 auto;
+
+    .article__header {
+        margin-bottom: 50px;
+        
+        @media (min-width: 900px) {
+            display: flex;
+            flex-direction: row-reverse;
+            align-content: space-between;
+            margin-left: -68px;
+            margin-right: -68px;
+            padding: 2em 4em;
+            background-color: $brand-red;
+            color: white;
+        }
+
+        .article__image {
+            
+            @media (min-width: 900px) {
+                max-width: 300px;
+            }
+        }
+
+        .article__meta {
+
+            @media (min-width: 900px) {
+                margin-right: 4em;
+            }
+
+            .article__heading {
+
+            @media (min-width: 900px) {
+                color: white;
+            }
+        }
+        }
+    }
+
+    .article__footer {
+        display: flex;
+        align-items: center;
+        margin-top: 3em;
+        border-bottom: 1px solid #eeee;
+
+        .author__avatar {
+
+            img {
+                border-radius: 50px;
+            }
+        }
+
+        .author__attribution {
+            margin-left: 1em;
+        }
+    }
+}

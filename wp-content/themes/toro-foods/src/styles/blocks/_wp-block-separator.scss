@@ -1,0 +1,21 @@
+.wp-block-separator {
+  max-width: 10rem;
+  margin: 3rem auto;
+  height: 0;
+  border: 0;
+  border-top: 1px solid;
+
+  &.is-style-wide,
+  &.is-style-dots {
+    max-width: 100%;
+  }
+
+  &.is-style-wide {}
+
+  &.is-style-dots {}
+
+  & + .has-transparent-background-color,
+  & + .has-white-background-color {
+    margin-top: -3rem;
+  }
+}

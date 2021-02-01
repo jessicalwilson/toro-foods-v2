@@ -1,0 +1,17 @@
+$wp-block-column-gap: 32px !default; // Default 32px
+
+$media-wp-block-columns-tablet: 600px !default; // WordPress tablet
+$media-wp-block-columns-desktop: 782px !default; // WordPress desktop
+
+.wp-block-columns {
+  clear: both;
+  margin-bottom: $wp-block-column-gap;
+
+  // @media (max-width: ($media-wp-block-columns-desktop - 1px)) and (min-width: $media-wp-block-columns-tablet) {
+  //   // property: value;
+  // }
+
+  & + & {
+    margin-top: $wp-block-column-gap;
+  }
+}
